@@ -19,21 +19,17 @@ git clone https://github.com/kudinov-prog/infra_sp2
 ```
 docker-compose up
 ```
-Запустите терминал внутри контейнера (команду необходимо выполнить в папке с файлом docker-compose.yaml)
+Выполните миграцию базы данных, используйте команду
 ```
-docker-compose exec web bash
-```
-Для того, чтобы выполнить миграцию базы данных, используйте команду в терминале контейнера
-```
-python manage.py migrate
+docker-compose run web python manage.py migrate
 ```
 Для работы с админкой Django необходимо создать суперюзера
 ```
-python manage.py createsuperuser
+docker-compose run web python manage.py createsuperuser
 ```
 По желанию можно подгрузить в базу тестовые данные
 ```
-python manage.py loaddata fixtures.json
+docker-compose run web python manage.py loaddata fixtures.json
 ```
 Остановить работу и удалить контейнеры можно командой
 ```
