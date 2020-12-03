@@ -1,8 +1,10 @@
 .git/*
 env/
 venv/
-.env
-sent_emails/
+*.env
+
+
+
 __pycache__/
 *.py[cod]
 
@@ -16,4 +18,7 @@ __pycache__/
 *.sublime-workspace
 
 db.sqlite3
+
+sent_emails/
+
 .vscode/
